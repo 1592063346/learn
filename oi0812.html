@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>oi0811</title>
+      <title>oi0812</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -25,81 +25,94 @@
       <div class="crossnote markdown-preview  ">
       
 <p><a href="https://1592063346.github.io/learn/oi-main">返回主页</a></p>
-<h2 id="20240811-补充字符串string与函数">2024.08.11 补充：字符串（string）与函数 </h2>
-<div class="admonition hint">
-<p class="admonition-title">问题 1：字符环</p>
-<p>有两个由字符构成的环。请写一个程序，计算这两个字符环上最长连续公共字符串的长度。</p>
-<p>例如，字符串 <code>ABCEFAGADEGKABUVKLM</code> 的首尾连在一起，构成一个环；字符串 <code>MADJKLUVKL</code> 的首尾连在一起，构成另一个环；<code>UVKLMA</code> 是这两个环的一个连续公共字符串。</p>
-<h4>输入格式</h4>
-<p>一行，包含两个字符串，分别对应两个字符环。这两个字符串之间用单个空格分开。</p>
-<p>字符串长度不超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>255</mn></mrow><annotation encoding="application/x-tex">255</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">255</span></span></span></span>，且不包含空格等空白符。</p>
-<h4>输出格式</h4>
-<p>输出一个整数，表示这两个字符环上最长公共字符串的长度。保证答案有限。</p>
-<h4>样例输入</h4>
-<pre data-role="codeBlock" data-info="" class="language-text"><code>ABCEFAGADEGKABUVKLM MADJKLUVKL
-</code></pre><h4>样例输出</h4>
-<pre data-role="codeBlock" data-info="" class="language-text"><code>6
-</code></pre><h4>要求</h4>
-<p>请仅填充下面代码中的 <code>solve</code> 函数，完成本题。</p>
+<h2 id="20240812-补充结构体与非负整数的位运算">2024.08.12 补充：结构体与（非负整数的）位运算 </h2>
+<div class="admonition note">
+<p class="admonition-title">结构体的构造函数</p>
+<p>阅读、编译并运行下面的代码，看看会得到什么输出。</p>
 <pre data-role="codeBlock" data-info="cpp{.line-numbers}" class="language-cpp cpp line-numbers"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string&gt;</span></span>
 
 <span class="token keyword keyword-using">using</span> <span class="token keyword keyword-namespace">namespace</span> std<span class="token punctuation">;</span>
 
-<span class="token keyword keyword-int">int</span> <span class="token function">solve</span><span class="token punctuation">(</span>string a<span class="token punctuation">,</span> string b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment">// 请在这里实现该函数。</span>
-    <span class="token keyword keyword-return">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token keyword keyword-struct">struct</span> <span class="token class-name">MyStruct</span> <span class="token punctuation">{</span>
+    string name<span class="token punctuation">;</span>
+    <span class="token keyword keyword-int">int</span> score<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
 <span class="token keyword keyword-int">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    string a<span class="token punctuation">,</span> b<span class="token punctuation">;</span>
-    cin <span class="token operator">&gt;&gt;</span> a <span class="token operator">&gt;&gt;</span> b<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token function">solve</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    MyStruct Alice<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> Alice<span class="token punctuation">.</span>name <span class="token operator">&lt;&lt;</span> <span class="token char">' '</span> <span class="token operator">&lt;&lt;</span> Alice<span class="token punctuation">.</span>score <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
     <span class="token keyword keyword-return">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
-<div class="admonition question">
-<p class="admonition-title">思考 1</p>
-<p>问题 1 中，已知字符串长度不超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>255</mn></mrow><annotation encoding="application/x-tex">255</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">255</span></span></span></span>，且答案有限，则答案的最大值是多少？</p>
+</code><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre><p>试着将上述代码中第 6 行开始的 <code>struct MyStruct</code> 改成下面的内容。再次编译并运行，看看会得到什么输出。</p>
+<pre data-role="codeBlock" data-info="cpp{.line-numbers}" class="language-cpp cpp line-numbers"><code><span class="token keyword keyword-struct">struct</span> <span class="token class-name">MyStruct</span> <span class="token punctuation">{</span>
+    string name<span class="token punctuation">;</span>
+    <span class="token keyword keyword-int">int</span> score<span class="token punctuation">;</span>
+
+    <span class="token function">MyStruct</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        name <span class="token operator">=</span> <span class="token string">"Alice"</span><span class="token punctuation">;</span>
+        score <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre><p>像上面那样，结构体内，直接以结构体本身的名字命名，且没有返回值的成员函数被称为结构体的构造函数。构造函数不能直接被调用，会在创建对象时自动执行。它通常被用于进行一些初始化操作。</p>
 </div>
 <div class="admonition hint">
-<p class="admonition-title">问题 2：数字反转（升级版）</p>
-<p><a href="https://www.luogu.com.cn/problem/P1553">题目链接</a></p>
-<h4>提示</h4>
-<p>普及组里经常出现一些字符串处理的题。题目本身较易理解，但是编写起来可能比较麻烦。</p>
-<p>很多时候需要具体问题具体分析。尽管 <code>string</code> 类提供了强大的库函数，但在本题中，组合使用这些函数可能会很麻烦，手写函数可能会是一个更好的选择。</p>
+<p class="admonition-title">问题 1：位运算练习</p>
+<ol>
+<li>计算：<code>3 &amp; 2</code></li>
+<li>计算：<code>4 | 3</code></li>
+<li>计算：<code>6 ^ 2</code></li>
+<li>计算：<code>3 &lt;&lt; 2</code></li>
+<li>计算：<code>13 &gt;&gt; 2</code></li>
+<li>思考：<code>x &amp; 1</code> 有什么作用？</li>
+<li>思考：将 <code>x</code> 的二进制从小到大第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 位置 0/置 1/反转，该如何实现？</li>
+<li>思考：为什么有 <code>x + y == (x &amp; y) + (x | y)</code>？</li>
+<li>思考：下面的函数做了什么事情？</li>
+</ol>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-int">int</span> <span class="token function">popcount</span><span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword keyword-int">int</span> result <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+   <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">31</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       result <span class="token operator">+=</span> <span class="token punctuation">(</span>x <span class="token operator">&gt;&gt;</span> i<span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token number">1</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword keyword-return">return</span> result<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>调用单次上述函数，会进行 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>31</mn></mrow><annotation encoding="application/x-tex">31</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">31</span></span></span></span> 次循环。你能实现一个功能与之完全一样的函数，但仅仅进行 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span></span></span></span> 次循环吗？提示：你可以进行一定程度的预处理。</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">问题 2：找筷子</p>
+<p><a href="https://www.luogu.com.cn/problem/P1469">题目链接</a></p>
+<h4>注意</h4>
+<p>空间限制为 4 MB。</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">函数技巧：先声明再定义</p>
-<p>阅读并编译下面的代码，编译得到了什么结果？</p>
+<p class="admonition-title">C++ 的运算优先级</p>
+<p>阅读、编译并运行下面的代码，看看会得到什么输出。它和你期望的输出一样吗？</p>
 <pre data-role="codeBlock" data-info="cpp{.line-numbers}" class="language-cpp cpp line-numbers"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
 
 <span class="token keyword keyword-using">using</span> <span class="token keyword keyword-namespace">namespace</span> std<span class="token punctuation">;</span>
 
-<span class="token keyword keyword-int">int</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>x <span class="token operator">&gt;=</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword keyword-return">return</span> <span class="token function">g</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span> <span class="token keyword keyword-else">else</span> <span class="token punctuation">{</span>
-        <span class="token keyword keyword-return">return</span> x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword keyword-int">int</span> <span class="token function">g</span><span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>x <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword keyword-return">return</span> <span class="token function">f</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span> <span class="token keyword keyword-else">else</span> <span class="token punctuation">{</span>
-        <span class="token keyword keyword-return">return</span> x <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
 <span class="token keyword keyword-int">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token char">' '</span> <span class="token operator">&lt;&lt;</span> <span class="token function">g</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword keyword-bool">bool</span> x <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">|</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> x <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
     <span class="token keyword keyword-return">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre><p>尝试在上述代码的第 4 行处加入以下两行代码，再编译试试。</p>
-<pre data-role="codeBlock" data-info="cpp{.line-numbers}" class="language-cpp cpp line-numbers"><code><span class="token keyword keyword-int">int</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword keyword-int">int</span> <span class="token function">g</span><span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></pre><p>能够发现，代码已经能正常编译并运行输出结果。这就是函数的先声明再定义，即我们先声明好函数 <code>f</code> 和 <code>g</code>，构建一个所谓的“接口”，但是不定义函数具体的内容，等到后面再来具体编写这两个函数。这种写法在算法竞赛中使用得不多，但在未来的工程代码里将会大量使用。</p>
+</code><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre><p>C++ 中，常见的运算符号遵循以下的从高到低优先级顺序（每一级内部从左到右运输）：</p>
+<ul>
+<li>乘除法：<code>*</code>, <code>/</code></li>
+<li>加减法：<code>+</code>, <code>-</code></li>
+<li>左移/右移：<code>&lt;&lt;</code>, <code>&gt;&gt;</code></li>
+<li>大于/小于（含等于）：<code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code></li>
+<li>等于/不等于：<code>==</code>, <code>!=</code></li>
+<li>按位与：<code>&amp;</code></li>
+<li>按位异或：<code>^</code></li>
+<li>按位或：<code>|</code></li>
+</ul>
+<p>上面的优先级顺序不必严格记忆，只需记住大概的规律，比如位运算通常比四则运算有更高的优先级。在拿不准时，多加括号是个非常好用的办法。尽管这可能会让代码变冗长，但减少了出错的几率。</p>
+<p>依据上面的优先级，再解释一下上述代码为啥会得到那样的输出。试着预测一下下面这些表达式在 C++ 中的输出，并编程验证它们。</p>
+<ol>
+<li><code>3 + 4 &gt;&gt; 2</code></li>
+<li><code>5 | 3 &amp; 4</code></li>
+</ol>
 </div>
 
       </div>

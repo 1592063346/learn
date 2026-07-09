@@ -33,10 +33,64 @@
 <p>[TBD]</p>
 <h3 id="font-colorgreen比赛规则font"><font color="green">比赛规则</font> </h3>
 <p>[TBD]</p>
+<details>
+  <summary><font color="#1E90FF">（点击展开）“死三”规则简要介绍</font></summary>
+<p>游戏王比赛中的“死三”（死亡三回合），是一种在常规比赛时间耗尽后，用来强制决出胜负的规则，其核心是在额外进行的三个回合结束后，生命值高的一方获胜。</p>
+<p>一场比赛（BO3）的时间限制为 40 分钟。在瑞士轮中，当一场比赛的 40 分钟耗尽后：</p>
+<ul>
+<li><strong>若双方玩家仍在进行第一小局的对局（即 BO3 的第一场），则双方玩家均立即被判负，也即结果为“双败”</strong>。</li>
+<li>若双方玩家仍在进行第二或第三小局的对局，则立即进入“额外回合”阶段——此时正在进行的玩家回合会正常进行直到结束，之后再继续进行 3 个回合。若这之后仍未分出胜负，则直接比较双方生命值，生命值高者获得该小局的胜利，生命值相同则该小局结果为平局。随后，依据到目前为止整场 BO3 的双方小局胜场数量来决定双方玩家的比赛结果，胜场多者该场比赛获胜，胜场相同则双方打平。需要注意的是，<strong>整个“额外回合”阶段的持续时间仅有 20 分钟。若 20 分钟耗尽后仍未分出该小局的胜负，则双方玩家均立即被判负，也即结果为“双败”</strong>。</li>
+<li>若双方玩家在两个小局之间（如正在更换备牌），则依据到目前为止整场 BO3 的双方小局胜场数量来决定双方玩家的比赛结果，胜场多者该场比赛获胜，胜场相同则双方打平。</li>
+</ul>
+<p>淘汰赛的“死三”规则与瑞士轮整体一致，但由于淘汰赛要求必定分出胜负，因此不会存在小局平局结果以及比赛“双败”结果。具体地：</p>
+<ul>
+<li>若某一小局内，进入了“额外回合”阶段且双方玩家仍未分出胜负，则对局继续进行并进入“骤死赛”——双方玩家生命值出现变动的回合结束时比较生命值，生命值较多的玩家立即获得该小局胜利。</li>
+<li>若整场比赛内，限制的 40 分钟已耗尽，且到目前为止整场 BO3 双方打平（即比分为 1:1），则进入仅拥有 4 个回合的“额外决斗”：
+<ul>
+<li>若双方玩家中至少有一位已经开始更换备牌，则双方均可以更换备牌，否则双方不更换备牌，维持现有牌组情况。</li>
+<li>双方重新通过猜拳或掷骰子等随机方式决定先后攻（由胜者选择）。</li>
+<li>4 个回合结束后继续进入“骤死赛”。</li>
+</ul>
+</li>
+</ul>
+</details>
 <h3 id="font-colorgreen活动奖品font"><font color="green">活动奖品</font> </h3>
 <p>[TBD]</p>
 <h3 id="font-colorgreen环境与战报font"><font color="green">环境与战报</font> </h3>
 <p>[TBD]</p>
+<style>
+/* 1. 自定义摘要样式 */
+summary {
+  display: block; /* 移除默认三角 */
+  background: #e9ecef;
+  padding: 10px 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* 2. 自定义指示器 */
+summary::before {
+  content: "►";
+  margin-right: 8px;
+  transition: transform 0.3s;
+}
+
+details[open] summary::before {
+  content: "▼";
+}
+
+/* 3. 自定义内容区域 */
+details {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* details::details-content {
+  padding: 15px 5px 5px 5px;
+  background: #f8f9fa;
+} */
+</style>
 
       </div>
       

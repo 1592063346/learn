@@ -1,0 +1,340 @@
+/* ========== 全局重置 & 字体 ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    align-items: flex-start;
+    /* background: linear-gradient(145deg, #f5f7fa 0%, #e6ecf5 100%); */
+    padding: 30px;
+}
+
+/* ========== 链接与链接按钮 ========== */
+
+.link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.back-link {
+    position: fixed;
+    top: 30px;
+    left: 16px;
+    /* padding: 8px 16px; */
+    /* background: rgba(0, 0, 0, 0.6); */
+    color: #0088CC;
+    border-radius: 8px;
+    text-decoration: none;
+    /* font-size: 14px; */
+    /* font-family: system-ui, sans-serif; */
+    z-index: 999;
+    transition: background 0.2s;
+}
+
+@media screen and (min-width: 914px) {
+    .back-link {
+        left: calc(50% - 457px + 2em);
+        /* top 保持 20px（已在默认样式中定义） */
+    }
+}
+
+/* .back-link:hover {
+    background: rgba(0, 0, 0, 0.85);
+} */
+
+/* ========== 卡片容器 ========== */
+.card {
+    width: 100%;
+    /* max-width: 560px; */
+    max-width: 914px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* border-radius: 32px; */
+    padding: 40px 36px 44px;
+    /* box-shadow: 0 20px 60px rgba(0, 20, 40, 0.12), 0 8px 24px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.7); */
+    /* border: 1px solid rgba(255, 255, 255, 0.5); */
+    transition: transform 0.25s ease;
+}
+
+/* .card:hover {
+    transform: translateY(-2px);
+} */
+
+/* ========== 标题 ========== */
+.card-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.3px;
+    margin-bottom: 12px;
+}
+
+.card-title .badge {
+    font-size: 14px;
+    font-weight: 500;
+    background: #2d3b5a;
+    color: #fff;
+    padding: 2px 14px;
+    border-radius: 40px;
+    letter-spacing: 0.3px;
+}
+
+/* ========== 描述文字 ========== */
+.description {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333333;
+    margin-bottom: 28px;
+    /* padding: 14px 18px; */
+    /* background: rgba(45, 59, 90, 0.04); */
+    /* border-radius: 14px; */
+    /* border-left: 4px solid #5a7b9c; */
+}
+
+.description strong {
+    color: #000000;
+    font-weight: 600;
+}
+
+.description .highlight {
+    display: inline-block;
+    background: #eef3fa;
+    padding: 0 10px;
+    border-radius: 6px;
+    /* font-family: 'JetBrains Mono', 'Fira Code', monospace; */
+    font-weight: 600;
+    color: #000000;
+    font-size: 15px;
+}
+
+/* ========== 输入区域 ========== */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.input-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.input-row input,
+.input-row textarea {
+    flex: 1;
+    min-width: 200px;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-family: inherit;
+    border: 1px solid #d7e0e8;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #1a2639;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.input-row input:focus,
+.input-row textarea:focus {
+    border-color: #5a7b9c;
+    box-shadow: 0 0 0 4px rgba(90, 123, 156, 0.15);
+}
+
+.input-row input::placeholder,
+.input-row textarea::placeholder {
+    color: #9aabbf;
+    font-weight: 400;
+}
+
+.input-row input:disabled,
+.input-row textarea:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ========== 按钮 ========== */
+.btn-submit {
+    padding: 14px 36px;
+    font-size: 16px;
+    /* font-weight: 600; */
+    font-family: inherit;
+    color: #fff;
+    background: #5a6b8f;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+    box-shadow: 0 4px 14px rgba(99, 116, 153, 0.25);
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+}
+
+.btn-submit:hover:not(:disabled) {
+    background: #1f2a42;
+    box-shadow: 0 6px 20px rgba(45, 59, 90, 0.35);
+}
+
+.btn-submit:active:not(:disabled) {
+    transform: scale(0.97);
+}
+
+.btn-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* ========== 结果区域 ========== */
+.result-area {
+    min-height: 72px;
+    padding: 18px 22px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px dashed #d7e0e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.3s, background 0.3s;
+    margin-top: 4px;
+}
+
+.result-area .result-text {
+    /* font-size: 20px; */
+    /* font-weight: 600; */
+    letter-spacing: 0.2px;
+    transition: color 0.3s;
+}
+
+.result-area .result-text.placeholder {
+    color: #9aabbf;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.result-area .result-text.correct {
+    color: #1e7e5e;
+}
+
+.result-area .result-text.error {
+    color: #b13e4b;
+}
+
+.result-area.correct {
+    border-color: #2d9b7a;
+    background: rgba(45, 155, 122, 0.07);
+}
+
+.result-area.error {
+    border-color: #c94a58;
+    background: rgba(201, 74, 88, 0.07);
+}
+
+/* ========== 底部 ========== */
+.footer-note {
+    margin-top: 22px;
+    font-size: 13px;
+    color: #8a9bb0;
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 18px;
+    letter-spacing: 0.2px;
+}
+
+.footer-note code {
+    background: rgba(0, 0, 0, 0.04);
+    padding: 2px 10px;
+    border-radius: 10px;
+    /* font-family: 'JetBrains Mono', 'Fira Code', monospace; */
+    font-size: 13px;
+    color: #2d3b5a;
+}
+
+/* ========== 响应式 ========== */
+@media (max-width: 480px) {
+    .card {
+        padding: 28px 20px 32px;
+        border-radius: 24px;
+    }
+    .card-title {
+        font-size: 22px;
+        flex-wrap: wrap;
+    }
+    .input-row {
+        flex-direction: column;
+    }
+    .input-row input {
+        min-width: unset;
+        width: 100%;
+    }
+    .btn-submit {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+    }
+    .result-area .result-text {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 380px) {
+    .card-title .badge {
+        font-size: 12px;
+        padding: 0 10px;
+    }
+    .description {
+        font-size: 14px;
+        padding: 12px 14px;
+    }
+}
+
+/* ========== 文件上传区域 ========== */
+.file-row {
+    margin-top: 8px;
+}
+
+.file-label {
+    display: inline-flex;
+    align-items: center;
+    /* font-size: 14px; */
+    color: #3d4a5c;
+    padding-right: 12px;
+    white-space: nowrap;
+}
+
+.file-input {
+    flex: 1;
+    min-width: 160px;
+    padding: 10px 12px;
+    font-size: 14px;
+    font-family: inherit;
+    border: 2px solid #d7e0e8;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #333333;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.file-input:hover {
+    border-color: #5a7b9c;
+}
+
+.file-input:focus {
+    outline: none;
+    border-color: #5a7b9c;
+    box-shadow: 0 0 0 4px rgba(90, 123, 156, 0.15);
+}

@@ -260,7 +260,7 @@ html { font-size: 16px; }
     html { font-size: 14px; }
 
     .card {
-        padding: 28px 10px 32px;
+        padding: 28px 0px 32px;
         border-radius: 24px;
     }
     .card-title {
